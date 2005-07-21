@@ -4,20 +4,20 @@
 Summary:	KDE splash screen
 Summary(pl):	Ekran startowy KDE
 Name:		kde-splash-%{_splash}
-Version:	0.3
-Release:	0.1
+Version:	0.4.2
+Release:	1
 License:	GPL
 Group:		X11/Amusements
 Source0:	http://moodwrod.com/files/ksplash-engine-%{_splash}_%{version}.tar.gz
-# Source0-md5:	0bedd78b9128f34a33f8e17b39012af4
+# Source0-md5:	322404928ed7e17a1c8708d4dc13b960
 URL:		http://www.kde-look.org/content/show.php?content=25705
-Requires:	kdebase-desktop >= 9:3.2.0
+Requires:	kdebase-desktop >= 9:3.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Description:
 This is a new splash screen engine for KDE 3.4. It includes the
-MoodinKDE theme.
+moodinn and FingerPrint theme.
 
 Featues:
  - Fading icons
@@ -27,14 +27,16 @@ Featues:
  - Custom icon/image arrangement
 
 %description -l pl
-Napisz mnie:)
+To jest nowy silnik ekranu startowego dla KDE 3.4 Zawiera motyw
+moodin i FingerPrint
 
 %prep
-%setup -q -n ksplash-engine-moodin
+%setup -q -n %{_splash}
 
 %build
 
-%configure
+%configure \
+        --with-qt-libraries=%{_libdir}
 %{__make}
 
 %install
@@ -48,4 +50,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/kde3/ksplashmoodin.*
 %{_datadir}/apps/ksplash/Themes/MoodinKDE
+%{_datadir}/apps/ksplash/Themes/FingerPrint
 %{_datadir}/services/ksplashmoodin.desktop

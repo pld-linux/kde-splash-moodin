@@ -15,7 +15,6 @@ Requires:	kdebase-desktop >= 9:3.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Description:
 This is a new splash screen engine for KDE 3.4. It includes the
 moodinn and FingerPrint theme.
 
@@ -27,8 +26,15 @@ Featues:
  - Custom icon/image arrangement
 
 %description -l pl
-To jest nowy silnik ekranu startowego dla KDE 3.4 Zawiera motyw
-moodin i FingerPrint
+To jest nowy silnik ekranu startowego dla KDE 3.4. Zawiera motywy
+moodin i FingerPrint.
+
+Cechy:
+ - wygasaj±ce ikony
+ - u¿ycie aktualnego zestawu ikon lub w³asnych obrazków
+ - u¿ycie w³asnych warto¶ci tekstu
+ - ustawianie opó¼nienia i d³ugo¶ci wygasania
+ - w³asny uk³ad ikon/obrazków
 
 %prep
 %setup -q -n %{_splash}

@@ -2,7 +2,7 @@
 %define		_splash		moodin
 
 Summary:	KDE splash screen
-Summary(pl):	Ekran startowy KDE
+Summary(pl.UTF-8):   Ekran startowy KDE
 Name:		kde-splash-%{_splash}
 Version:	0.4.2
 Release:	2
@@ -25,16 +25,16 @@ Featues:
  - Set fading delay and length
  - Custom icon/image arrangement
 
-%description -l pl
+%description -l pl.UTF-8
 To jest nowy silnik ekranu startowego dla KDE 3.4. Zawiera motywy
 moodin i FingerPrint.
 
 Cechy:
- - wygasaj�ce ikony
- - u�ycie aktualnego zestawu ikon lub w�asnych obrazk�w
- - u�ycie w�asnych warto�ci tekstu
- - ustawianie op�nienia i d�ugo�ci wygasania
- - w�asny uk�ad ikon/obrazk�w
+ - wygasające ikony
+ - użycie aktualnego zestawu ikon lub własnych obrazków
+ - użycie własnych wartości tekstu
+ - ustawianie opóźnienia i długości wygasania
+ - własny układ ikon/obrazków
 
 %prep
 %setup -q -n %{_splash}

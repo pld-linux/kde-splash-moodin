@@ -11,6 +11,7 @@ Group:		X11/Amusements
 Source0:	http://moodwrod.com/files/ksplash-engine-%{_splash}_%{version}.tar.gz
 # Source0-md5:	322404928ed7e17a1c8708d4dc13b960
 URL:		http://www.kde-look.org/content/show.php?content=25705
+BuildRequires:	kdebase-devel
 Requires:	kdebase-desktop >= 9:3.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,12 +43,13 @@ Cechy:
 %build
 
 %configure \
-        --with-qt-libraries=%{_libdir}
+	--with-qt-libraries=%{_libdir}
 %{__make}
 
 %install
-
-%makeinstall
+rm -rf $RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
